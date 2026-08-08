@@ -1,0 +1,25 @@
+# @agent: session-260808-fleet-spruce | module: memory-palace-goai-skeleton | ts: 2026-08-08T17:00+08:00
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-palace-goai"
+version = "0.1.0"
+description = "Memory Palace × GOAI 业务层：7 Agents + 6 Skills + mp_api（依赖 agent-teams-sdk 框架）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "故障自愈小队" }]
+dependencies = [
+    "agent-teams-sdk>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[tool.setuptools.packages.find]
+include = ["memory_palace_goai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
