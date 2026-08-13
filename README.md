@@ -71,7 +71,7 @@ pytest
 ### 依赖
 
 - Python 3.10+
-- agent-teams-sdk（框架依赖）
+- 内置 agent_teams_sdk 框架（本仓库包含）
 - 标准库（json, logging, datetime 等）
 
 ### 样例输入输出
