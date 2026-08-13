@@ -1,7 +1,9 @@
 <!-- @agent: session-260808-fleet-spruce | module: memory-palace-goai-skeleton | ts: 2026-08-08T17:00+08:00 -->
 <!-- @agent: session-260813-keen-orbit | module: README提交说明 | ts: 2026-08-13T18:30+08:00 -->
 
-# memory-palace-goai
+# TimeWeave 织时（memory-palace-goai）
+
+> 品牌名：TimeWeave 织时（编织你的记忆，预见你的未来）
 
 **Memory Palace × GOAI 赛道一（新智基座 | AgentInfra）业务层**
 
