@@ -5,25 +5,25 @@
 
 > 品牌名：TimeWeave 织时（编织你的记忆，预见你的未来）
 
-**Memory Palace × GOAI 赛道一（新智基座 | AgentInfra）业务层**
+**TimeWeave × GOAI 赛道一（新智基座 | AgentInfra）业务层**
 
 7 个 Agent + 6 个 Skill + mp_api 桥接层，基于 [agent-teams-sdk](F:\agent-teams-sdk) 框架（TeamRoom 黑板模式）。
 
 ## 仓库定位
 
 ```
-agent-teams-sdk        通用框架（两项目共用，可开源）
+agent-teams-sdk        通用协同框架（可开源）
 memory-palace-goai     本仓库：MP 业务层（本仓库独享）
 selfbrain-goai         SelfBrain 业务层（SelfBrain 独享）
 ```
 
 - **开源部分**（本仓库）：Agent 调用逻辑、Skill Schema + Wrapper、API 契约、Demo
-- **闭源部分**：Memory Palace 核心引擎（主项目，黑盒保护）
+- **闭源部分**：TimeWeave 闭源核心引擎（黑盒保护）
 
 ## 安装
 
 ```bash
-pip install -e ../agent-teams-sdk     # 先装框架（或从 PyPI）
+pip install agent-teams-sdk     # 协同框架
 pip install -e .                      # 本仓库
 ```
 
@@ -50,7 +50,7 @@ memory_palace_goai/
 ## 黑盒边界
 
 - Skill Wrapper 只调用 `mp_api`（开源接口）
-- 引擎实现（HNSW/BM25/RRF/压缩算法）在主项目闭源 SDK，通过 `Engine` 接入（`MP_ENGINE_PATH` 配置）
+- 核心检索/压缩算法在闭源引擎 SDK，通过 `Engine` 接入（`MP_ENGINE_PATH` 配置）
 
 ## GOAI 初赛提交说明
 
@@ -60,7 +60,7 @@ memory_palace_goai/
 
 ```bash
 # 安装
-pip install -e ../agent-teams-sdk   # 先装框架
+pip install agent-teams-sdk   # 协同框架
 pip install -e .
 
 # 运行 Demo（stub 引擎，无需闭源 SDK）
@@ -104,15 +104,15 @@ pytest
 # 261 passed
 ```
 
-**评测引用（来自 Memory Palace 主项目，非本仓库）：**
+**评测引用（来自 TimeWeave 闭源核心引擎，非本仓库）：**
 - LoCoMo Hit@3: **89.58%**
 - LongMemEval: **84.8%**
 
-> 注：以上评测在 Memory Palace 主项目（`memory-palace-v3.0`）完成，使用完整引擎。本仓库为 AgentTeams 协同层，通过 `mp_api` 桥接主项目引擎。
+> 注：以上评测在闭源核心引擎（完整引擎）完成。本仓库为 AgentTeams 协同层，通过 `mp_api` 桥接闭源引擎（`MP_ENGINE_PATH` 配置）。
 
 ### 黑盒说明
 
-本仓库**不包含** Memory Palace 核心引擎（HNSW 索引、BM25 检索、RRF 融合、压缩算法等）。核心引擎位于主项目（闭源），通过以下方式桥接：
+本仓库**不包含**闭源核心引擎（检索/压缩/时间线/预测算法等）。核心引擎为商业闭源，通过以下方式桥接：
 
 1. **Stub 引擎**（`mp_api/stub_engine.py`）：Demo 和测试使用，无需闭源 SDK
 2. **真实引擎**（`MP_ENGINE_PATH` 配置）：生产环境加载主项目 `.so`/`.dll`

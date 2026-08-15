@@ -21,7 +21,7 @@ from agent_teams_sdk.roles.validator import ValidatorAgent, ValidationResult
 
 class MemoryCurator(CuratorAgent):
     """
-    Memory Palace Curator — 记忆管理调度器。
+    TimeWeave Curator — 记忆管理调度器。
 
     管理 5 个 Worker Agent（L1/L2/L2.5/L2.7/L3）和 1 个 Validator，
     实现查询和存储两种核心流程。

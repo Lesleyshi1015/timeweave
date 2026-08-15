@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "memory-palace-goai"
 version = "0.1.0"
-description = "Memory Palace × GOAI 业务层：7 Agents + 6 Skills + mp_api（依赖 agent-teams-sdk 框架）"
+description = "TimeWeave × GOAI 业务层：7 Agents + 6 Skills + mp_api（依赖 agent-teams-sdk 框架）"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }

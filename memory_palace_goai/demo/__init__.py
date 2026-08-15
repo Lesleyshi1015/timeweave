@@ -1,6 +1,6 @@
 # @agent: session-260808-vital-prairie | module: apps/memory_palace/demo | ts: 2026-08-08T17:00+08:00
 """
-Memory Palace 端到端演示。
+TimeWeave 端到端演示。
 
 运行方式：
     python -m memory_palace_goai.demo.end_to_end

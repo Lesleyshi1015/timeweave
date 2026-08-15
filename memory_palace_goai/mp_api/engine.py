@@ -1,9 +1,8 @@
 """
-Engine — Memory Palace 真实引擎接入层。
+Engine — 闭源核心引擎接入层。
 
-通过配置读取主项目路径，动态导入检索核心。
-当前为骨架实现：方法体返回 stub 降级结果并打印 warning。
-TODO: 接入 F:/memory-palace-v3.0/src 的真实引擎方法。
+通过环境变量 MP_ENGINE_PATH 或配置读取闭源引擎路径，动态导入检索核心。
+当前为骨架实现：方法体返回 stub 降级结果并打印 warning（需配置闭源引擎路径后启用真实引擎）。
 """
 
 import os
@@ -17,7 +16,7 @@ from .stub import StubEngine
 
 class Engine(MPService):
     """
-    Memory Palace 真实引擎代理。
+    TimeWeave 真实引擎代理。
 
     从环境变量 MP_ENGINE_PATH 或配置文件读取主项目路径，
     动态导入检索核心并代理调用。
@@ -30,19 +29,26 @@ class Engine(MPService):
         初始化引擎代理。
 
         Args:
-            engine_path: 主项目路径。优先使用传入值，其次 MP_ENGINE_PATH 环境变量，
-                         最后回退到默认路径 F:/memory-palace-v3.0/src。
+            engine_path: 闭源引擎路径。优先使用传入值，其次 MP_ENGINE_PATH 环境变量。
+                         未配置时使用 stub（无默认路径，避免暴露内部结构）。
         """
-        self._engine_path = engine_path or os.environ.get(
-            "MP_ENGINE_PATH",
-            "F:/memory-palace-v3.0/src",
-        )
+        self._engine_path = engine_path or os.environ.get("MP_ENGINE_PATH")
         self._stub = StubEngine()
         self._core = None
         self._try_load_core()
 
     def _try_load_core(self) -> None:
-        """尝试动态加载主项目检索核心。"""
+        """尝试动态加载闭源引擎核心。
+
+        未配置引擎路径（MP_ENGINE_PATH 未设置）或路径不存在时，优雅降级为 StubEngine。
+        """
+        if not self._engine_path:
+            warnings.warn(
+                "[mp_api/engine] 未配置引擎路径（MP_ENGINE_PATH），使用 StubEngine",
+                RuntimeWarning,
+                stacklevel=2,
+            )
+            return
         core_path = Path(self._engine_path)
         if not core_path.exists():
             warnings.warn(

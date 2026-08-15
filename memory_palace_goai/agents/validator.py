@@ -24,7 +24,7 @@ from memory_palace_goai.skills.data_validation import DataValidation
 
 class MemoryValidator(ValidatorAgent):
     """
-    Memory Palace 验证器 — 6 维数据质量核查。
+    TimeWeave 验证器 — 6 维数据质量核查。
 
     在查询流程和存储流程的末尾执行验证，
     确保输出结果满足质量要求。

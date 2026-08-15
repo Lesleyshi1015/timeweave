@@ -1,6 +1,6 @@
 # @agent: session-260808-vital-prairie | module: tests/test_mp_agents | ts: 2026-08-08T17:00+08:00
 """
-Memory Palace Agents 端到端测试
+TimeWeave Agents 端到端测试
 
 覆盖：
 - 查询流程端到端（stub）

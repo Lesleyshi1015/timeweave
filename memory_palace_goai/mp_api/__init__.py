@@ -1,5 +1,5 @@
 """
-Memory Palace API 桥接层。
+TimeWeave API 桥接层。
 
 提供 get_service() 工厂函数，根据 mode 返回 StubEngine 或 Engine 实例。
 
@@ -24,7 +24,7 @@ __all__ = ["MPService", "StubEngine", "Engine", "get_service"]
 
 def get_service(mode: str = "stub") -> MPService:
     """
-    Memory Palace 服务工厂。
+    TimeWeave 服务工厂。
 
     Args:
         mode: 引擎模式。

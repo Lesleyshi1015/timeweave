@@ -1,6 +1,6 @@
 # @agent: session-260808-vital-prairie | module: apps/memory_palace/demo/end_to_end | ts: 2026-08-08T17:00+08:00
 """
-Memory Palace 端到端演示脚本。
+TimeWeave 端到端演示脚本。
 
 演示两个核心流程：
 1. 查询流程：用户提问 → L1检索 → L2时间线 → L2.5图谱 → 返回答案
@@ -60,7 +60,7 @@ def run_query_demo(query: str = "上周的告警根因"):
     打印每个步骤的执行痕迹和完整度变化。
     """
     print("=" * 60)
-    print("Memory Palace 查询流程演示")
+    print("TimeWeave 查询流程演示")
     print("=" * 60)
     print(f"用户查询: {query}")
     print("-" * 60)
@@ -116,7 +116,7 @@ def run_store_demo(content: str = "昨天告警: API 5xx升高"):
     打印每个步骤的执行痕迹和 6 维核查结果。
     """
     print("=" * 60)
-    print("Memory Palace 存储流程演示")
+    print("TimeWeave 存储流程演示")
     print("=" * 60)
     print(f"存储内容: {content}")
     print("-" * 60)

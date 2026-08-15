@@ -1,5 +1,5 @@
 """
-Memory Palace API 接口契约层。
+TimeWeave API 接口契约层。
 
 定义 MPService 抽象基类，供 StubEngine 和 Engine 继承实现。
 所有方法返回 dict，保持黑盒保护（框架开源、引擎闭源）。
@@ -11,7 +11,7 @@ from typing import Any
 
 class MPService(ABC):
     """
-    Memory Palace 服务接口契约。
+    TimeWeave 服务接口契约。
 
     提供三层能力：
     - Layer 1: 记忆检索与索引（search / index）

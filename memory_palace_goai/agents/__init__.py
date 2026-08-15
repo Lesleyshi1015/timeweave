@@ -1,6 +1,6 @@
 # @agent: session-260808-vital-prairie | module: apps/memory_palace/agents | ts: 2026-08-08T17:00+08:00
 """
-Memory Palace Agents 包。
+TimeWeave Agents 包。
 
 提供 7 个 Agent 类，实现黑板模式协同：
 - MemoryCurator: 调度器（发布任务/评估完整度/重建结果）

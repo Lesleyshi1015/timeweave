@@ -1,5 +1,5 @@
 """
-StubEngine — Memory Palace 桩实现。
+StubEngine — TimeWeave 桩实现。
 
 使用内存 dict 模拟记忆存储，返回合理演示数据。
 适用于：端到端流程验证、演示、无引擎环境下的开发测试。
@@ -13,7 +13,7 @@ from .api import MPService
 
 class StubEngine(MPService):
     """
-    Memory Palace 桩引擎。
+    TimeWeave 桩引擎。
 
     用内存 dict 模拟记忆存储，所有方法返回演示数据。
     演示场景：运维告警根因分析（API 5xx、数据库索引失效等）。

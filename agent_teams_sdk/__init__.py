@@ -1,5 +1,5 @@
 # @agent: session-260808-fleet-spruce | module: agent-teams-sdk-skeleton | ts: 2026-08-08T16:35+08:00
-"""agent-teams-sdk：通用 AgentTeams 协同框架（Memory Palace / SelfBrain 共用）"""
+"""agent-teams-sdk：通用 AgentTeams 协同框架（TimeWeave / SelfBrain 共用）"""
 
 from agent_teams_sdk.core.team_room import TeamRoom, BlackboardEntry
 from agent_teams_sdk.core.base_agent import BaseAgent, AgentState

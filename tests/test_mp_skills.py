@@ -1,6 +1,6 @@
 # @agent: session-260808-golden-quasar | module: tests/test_mp_skills | ts: 2026-08-08T17:05+08:00
 """
-Memory Palace Skills 单元测试
+TimeWeave Skills 单元测试
 
 覆盖：
 - 6 个 Skill 的 schema 完整性（jsonschema 可校验）

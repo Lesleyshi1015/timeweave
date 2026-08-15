@@ -1,5 +1,5 @@
 """
-Memory Palace API 测试套件。
+TimeWeave API 测试套件。
 
 覆盖：
 - StubEngine 全方法返回结构
@@ -8,6 +8,7 @@ Memory Palace API 测试套件。
 """
 
 import re
+import os
 import sys
 import uuid
 from pathlib import Path
@@ -274,7 +275,7 @@ class TestEngineInit:
     def test_engine_default_path(self):
         """Engine 使用默认路径初始化。"""
         engine = Engine()
-        assert engine._engine_path == "F:/memory-palace-v3.0/src"
+        assert engine._engine_path == os.environ.get("MP_ENGINE_PATH") or None
 
     def test_engine_custom_path(self):
         """Engine 使用自定义路径初始化。"""

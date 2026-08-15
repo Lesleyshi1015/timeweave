@@ -1,6 +1,6 @@
 # @agent: session-260808-vital-prairie | module: apps/memory_palace/skills | ts: 2026-08-08T17:00+08:00
 """
-Memory Palace Skills 包。
+TimeWeave Skills 包。
 
 提供 6 个 Skill 类，供 Agent 调用：
 - HybridSearch: Layer 1 混合检索
